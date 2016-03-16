@@ -1,0 +1,7 @@
+{
+	"prefix": "const",
+	"dictionary": {
+	},
+	"name": "CONST",
+	"strategy": "constantCase"
+}
