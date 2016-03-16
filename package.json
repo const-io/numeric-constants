@@ -1,0 +1,91 @@
+{
+  "name": "numeric-constants",
+  "version": "0.0.0",
+  "description": "Numeric constants.",
+  "author": {
+    "name": "Philipp Burckhardt",
+    "email": "pburckhardt@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "Philipp Burckhardt",
+      "email": "pburckhardt@outlook.com"
+    }
+  ],
+  "scripts": {
+    "test": "if [ \"${TRAVIS}\" ]; then npm run test-ci; else npm run test-local; fi",
+    "test-local": "tape \"./test/*.js\" | tap-spec",
+    "test-ci": "npm run test-local && xvfb-run npm run test-browsers",
+    "test-cov": "istanbul cover --dir ./reports/coverage --report lcov tape -- \"./test/*.js\"",
+    "test-browsers": "browserify ./test/*.js | testling | tap-spec",
+    "coverage": "istanbul cover --dir ./reports/codecov/coverage --report lcovonly tape -- \"./test/*.js\" && cat ./reports/codecov/coverage/lcov.info | codecov && rm -rf ./reports/codecov"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/const-io/numeric-constants.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/const-io/numeric-constants/issues"
+  },
+  "dependencies": {
+    "const-apery": "^1.0.0",
+    "const-cbrt-eps-float64": "^1.0.0",
+    "const-e": "^1.0.1",
+    "const-eps-float16": "^1.0.0",
+    "const-eps-float32": "^1.0.0",
+    "const-eps-float64": "^1.0.0",
+    "const-eulergamma": "^1.0.3",
+    "const-glaisher-kinkelin": "^1.0.0",
+    "const-ln-sqrt-two-pi": "^1.0.0",
+    "const-max-float32": "^1.0.2",
+    "const-max-float64": "^1.0.1",
+    "const-max-safe-integer-float64": "^1.0.2",
+    "const-max-uint16": "^1.0.2",
+    "const-max-uint32": "^1.0.2",
+    "const-max-uint8": "^1.0.2",
+    "const-ninf-float32": "^1.0.0",
+    "const-ninf-float64": "^1.0.0",
+    "const-pi": "^1.0.3",
+    "const-pi-squared": "^1.0.0",
+    "const-pinf-float32": "^1.0.0",
+    "const-pinf-float64": "^1.0.0",
+    "const-precision-float16": "^1.0.0",
+    "const-precision-float32": "^1.0.0",
+    "const-precision-float64": "^1.0.1",
+    "const-smallest-float32": "^1.0.2",
+    "const-smallest-float64": "^1.0.0",
+    "const-sqrt-eps-float64": "^1.0.0",
+    "const-two-pi": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "13.x.x",
+    "codecov": "1.x.x",
+    "istanbul": "^0.4.1",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "tap-spec": "4.x.x",
+    "tape": "4.x.x",
+    "testling": "1.x.x"
+  },
+  "testling": {
+    "files": [
+      "test/*.js"
+    ],
+    "browsers": [
+      "iexplore/6.0..latest",
+      "firefox/3.0..latest",
+      "firefox/nightly",
+      "chrome/4.0..latest",
+      "chrome/canary",
+      "opera/10.0..latest",
+      "opera/next",
+      "safari/4.0..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  },
+  "license": "MIT"
+}
