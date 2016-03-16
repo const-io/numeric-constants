@@ -39,6 +39,7 @@
     "const-eulergamma": "^1.0.3",
     "const-glaisher-kinkelin": "^1.0.0",
     "const-ln-sqrt-two-pi": "^1.0.0",
+    "const-ln2": "^1.0.0",
     "const-max-float32": "^1.0.2",
     "const-max-float64": "^1.0.1",
     "const-max-safe-integer-float64": "^1.0.2",

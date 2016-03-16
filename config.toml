@@ -1,0 +1,5 @@
+prefix = "const"
+name = "CONST"
+strategy = "constantCase"
+
+[dictionary]
